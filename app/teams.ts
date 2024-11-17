@@ -2,7 +2,7 @@ import { Trainer } from "./models";
 
 export const teams = [
     {
-        name: "Fonbe",
+        trainer: "Fonbe",
         pokemon: [
             "Venusaur",
             "Alakazam",
@@ -13,7 +13,7 @@ export const teams = [
         ]
     },
     {
-        name: "Basarrate",
+        trainer: "Basarrate",
         pokemon: [
             "Charizard",
             "Nidoking",
@@ -24,7 +24,7 @@ export const teams = [
         ]
     },
     {
-        name: "Enek",
+        trainer: "Enek",
         pokemon: [
             "Tyranitar",
             "Wobbuffet",
@@ -35,7 +35,7 @@ export const teams = [
         ]
     },
     {
-        name: "Torral",
+        trainer: "Torral",
         pokemon: [
             "Blastoise",
             "Exeggutor",
@@ -46,7 +46,7 @@ export const teams = [
         ]
     },
     {
-        name: "Soli",
+        trainer: "Soli",
         pokemon: [
             "Snorlax",
             "Gengar",
@@ -57,18 +57,18 @@ export const teams = [
         ]
     },
     {
-        name: "Duru",
+        trainer: "Duru",
         pokemon: [
             "Dragonite",
             "Starmie",
             "Blissey",
             "Machamp",
             "Victreebel",
-            "Weezing"
+            "Weezing" 
         ]
     },
     {
-        name: "Arauzo",
+        trainer: "Arauzo",
         pokemon: [
             "Heracross",
             "Magneton",
