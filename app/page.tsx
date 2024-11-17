@@ -33,23 +33,23 @@ export default function Home() {
 
   return (
     <div>
-      {Object.keys(trainerPokemon).length > 0 ? (
-        Object.keys(trainerPokemon).map((trainer, index) => (
-          <div key={index}>
-            <div className="trainer">
-              <h2>{trainer}</h2>
-            </div>
-            {trainerPokemon[trainer].map((pokemon, idx) => (
-              <div key={idx}>
-                <h3>{pokemon.name}</h3>
-                <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      {Object.keys(trainerPokemon).length > 0
+        ? (
+          Object.keys(trainerPokemon).map((trainer, index) => (
+            <div key={index}>
+              <div className="trainer">
+                <h2>{trainer}</h2>
               </div>
-            ))}
-          </div>
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
+              {trainerPokemon[trainer].map((pokemon, idx) => (
+                <div key={idx}>
+                  <h3>{pokemon.name}</h3>
+                  <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                </div>
+              ))}
+            </div>
+          ))
+        )
+        : <p>Loading...</p>}
     </div>
   );
 }
