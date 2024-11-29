@@ -72,13 +72,14 @@ export default function PokemonTrainer() {
         ? (
           Object.keys(trainerPokemon).map((trainer, index) => (
             <div key={index}>
-              <div className="flex items-center my-8 p-2 m-2 rounded bg-orange-300">
-                <img
-                  src={usedImages[index]}
-                  alt={trainer}
-                  className="w-16 h-16 rounded-full"
-                />
-                <h2 className="m-2 p-2 bg-orange-500 rounded">{trainer}</h2>
+              <div className="flex items-center my-8 p-2 m-2 rounded bg-orange-400">
+                <div className="flex flex-col items-center p-5">
+                  <img
+                      src={usedImages[index]}
+                      alt={trainer}
+                  />
+                  <h2>{trainer}</h2>
+                </div>
                 <PokemonTeam pokemon={trainerPokemon[trainer]} />
               </div>
             </div>
