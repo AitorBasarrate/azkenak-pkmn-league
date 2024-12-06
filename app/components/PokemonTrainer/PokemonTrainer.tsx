@@ -45,7 +45,7 @@ interface TrainerPokemon {
 
 export default function PokemonTrainer() {
   const [trainerPokemon, setTrainerPokemon] = useState<TrainerPokemon>({});
-  const [usedImages, setUsedImages] = useState<string[]>([]);
+  const [trainerImages, setUsedImages] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -71,10 +71,10 @@ export default function PokemonTrainer() {
       {Object.keys(trainerPokemon).length > 0
         ? (
           Object.keys(trainerPokemon).map((trainer, index) => (
-            <div key={index} className="flex items-center my-8 p-2 m-2 rounded bg-orange-400">
-              <div className="flex flex-col items-center p-5">
+            <div key={index} className="flex flex-col sm:flex-row items-center my-8 p-2 m-2 rounded bg-orange-400">
+              <div className="flex flex-col items-center p-5 w-max hover:rounded hover:bg-orange-600 hover:shadow-lg">
                 <img
-                    src={usedImages[index]}
+                    src={trainerImages[index]}
                     alt={trainer}
                 />
                 <h2>{trainer}</h2>
