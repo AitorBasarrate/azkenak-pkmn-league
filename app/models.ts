@@ -4,6 +4,7 @@ export type Type = {
     name: string;
     url: string;
   };
+  image?: string;
 };
 
 export type Stat = {

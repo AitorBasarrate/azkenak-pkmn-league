@@ -5,23 +5,9 @@ import { useState, useEffect } from "react";
 import { getPokemon } from "./api/route";
 import "./style.css";
 import { teams } from "./teams";
-import ash_img from "./images/ash.png";
-import ballguy_img from "./images/ballguy.png";
-import blaine_img from "./images/blaine.png";
-import brock_img from "./images/brock.png";
-import cynthia_img from "./images/cynthia.png";
-import ethan_img from "./images/ethan.png";
-import flint_img from "./images/flint.png";
-import giovanni_img from "./images/giovanni-lgpe.png";
-import hilbert_img from "./images/hilbert.png";
-import jasmine_img from "./images/jasmine.png";
-import kukui_img from "./images/kukui.png";
-import lance_img from "./images/lance.png";
-import oak_img from "./images/oak.png";
-import red_img from "./images/red.png";
-import steven_img from "./images/steven.png";
-import volkner_img from "./images/volkner.png";
+
 import Link from "next/link";
+import { TRAINER_IMAGES } from "./images/imports";
 
 export default function Home() {
   return (
@@ -31,25 +17,6 @@ export default function Home() {
     </div>
   );
 }
-
-const IMAGES = [
-  ash_img["src"],
-  ballguy_img["src"],
-  blaine_img["src"],
-  brock_img["src"],
-  cynthia_img["src"],
-  ethan_img["src"],
-  flint_img["src"],
-  giovanni_img["src"],
-  hilbert_img["src"],
-  jasmine_img["src"],
-  kukui_img["src"],
-  lance_img["src"],
-  oak_img["src"],
-  red_img["src"],
-  steven_img["src"],
-  volkner_img["src"],
-];
 
 interface TrainerPokemon {
   [trainer: string]: Pokemon[];
@@ -73,7 +40,7 @@ export function PokemonTrainer() {
       }
       setTrainerPokemon(allTrainerPokemon);
     };
-    const shuffledImages = IMAGES.sort(() => 0.5 - Math.random());
+    const shuffledImages = TRAINER_IMAGES.sort(() => 0.5 - Math.random());
     setUsedImages(shuffledImages);
     fetchPokemon();
   }, []);

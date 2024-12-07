@@ -1,6 +1,7 @@
 "use client";
 
 import { getPokemon } from "@/app/api/route";
+import { TYPE_IMAGES } from "@/app/images/imports";
 import { Pokemon, Trainer } from "@/app/models";
 import { teams } from "@/app/teams";
 import { use, useEffect, useState } from "react";
@@ -23,11 +24,20 @@ export default function PokemonTeam() {
             for (let pokemon of team.pokemon) {
                 pokemonList.push(await getPokemon(pokemon.toLowerCase()));
             }
+            pokemonList.map(pokemon => pokemon.types.map(type => {
+                console.log("Type:", type);
+                for (let type_img of TYPE_IMAGES) {
+                    if (type_img === type.type.name) {
+                        type.image = type_img;
+                    }
+                }
+            }));
             setTeam(pokemonList);
         };
         fetchTrainer();
+
     }, [trainerName]);
-    console.log(team);
+
     return (
         <div>
             <h2>{trainerName}</h2>
@@ -36,6 +46,12 @@ export default function PokemonTeam() {
                     <div key={idx} className="flex flex-col items-center rounded hover:bg-orange-400 hover:shadow-2xl">
                         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
                         <h3>{pokemon.name.toUpperCase()}</h3>
+                        <div className="flex flex-row">
+                            {pokemon.types.map((type, idx) => (
+                                console.dir("Displaying type:", type),
+                                <img key={idx} src={type.image} alt={type.type.name} />
+                            ))}
+                        </div>  
                     </div>
                 ))}
             </div>
